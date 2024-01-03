@@ -42,7 +42,9 @@ def load():
         for glade in save["world"]["glades"]:
             if len(glade["fields"]) > 0:
                 resources.append(FARM_FIELD)
-                break
+            for node in glade["ore"]:
+                if node["model"] == "Copper Ore":
+                    resources.append(COPPER_ORE)
 
         for resource in save["world"]["resourcesDeposits"]:
             resource_type = resource["Value"]["model"]
