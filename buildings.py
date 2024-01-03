@@ -63,7 +63,7 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
 
     "Bath House": [((1, TEA), (1, CLEANLINESS))],
     "Clan Hall": [((1, TRAINING_GEAR), (1, BRAWLING)), ((1, INCENSE), (1, RELIGION))],
-    "Explorer's Lodge": [((1, TRAINING_GEAR), (1, BRAWLING)), ((1, SCROLL), (1, EDUCATION))],
+    "Explorers Lodge": [((1, TRAINING_GEAR), (1, BRAWLING)), ((1, SCROLL), (1, EDUCATION))],
     "Forum": [((1, ALE), (1, LEISURE)), ((1, SCROLL), (1, EDUCATION))],
     "Guild House": [((1, WINE), (1, LUXURY))],
     "Holy Market": [((1, TEA), (1, CLEANLINESS)), ((1, WINE), (1, LUXURY))],
@@ -285,7 +285,7 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
         (Or([(4, INSECT), (4, BERRY), (4, COPPER_ORE), (3, COAL)]), (10, PIGMENT)),
         (And([(4, LEATHER), Or([(2, OIL), (2, MEAT)])]), (10, WATERSKIN)),
     ],
-    "Lumber Mill": [
+    "Lumbermill": [
         (And([Or([(4, LEATHER), (4, PLANT_FIBER), (10, WOOD)]), Or([(3, PIGMENT), (3, WINE)])]), (8, SCROLL)),
         (Or([(8, PIGMENT), (8, OIL), (6, FLOUR), (6, POTTERY), (6, BARREL), (6, WATERSKIN)]), (2, PACK_OF_LUXURY_GOODS)),
         ((3, WOOD), (2, PLANK)),
