@@ -78,6 +78,11 @@ def to_src(x):
 #print(to_src(Ingredient_Visitor().visit(ingredient_grammar["or_list"].parse("2 Crystalized Dew|3 Berries| 5 Ale"))))
 #raise Exception("Testing only!")
 
+# Map buildings from wiki to game name
+BUILDING_NAME_MAP = {
+    "Alchemist's Hut": "Alchemist Hut"
+}
+
 def fetch_building(url):
     response = requests.get(url)
 
@@ -90,6 +95,7 @@ def fetch_building(url):
     if not table:
         return
     title = soup.find("span", {"class": "mw-page-title-main"}).get_text()
+    title = BUILDING_NAME_MAP.get(title, title)
     print (f"    \"{title}\": [")
     for row in table.find('tbody').find_all('tr'):
         cols = row.find_all('td')

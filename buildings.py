@@ -167,7 +167,7 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
         CLEARANCE,
         STORM,
     ],
-    "Alchemist's Hut": [
+    "Alchemist Hut": [
         (And([Or([(2, HERB), (2, INSECT), (2, RESIN), (2, VEGETABLE)]), Or([(3, STONE), (3, CLAY)]), Or([(8, STORM), (12, CLEARANCE), (16, DRIZZLE)])]), (2, CRYSTALIZED_DEW)),
         (And([Or([(3, HERB), (3, PIGMENT), (3, RESIN), (3, MUSHROOM), (3, ROOT)]), Or([(3, DRIZZLE), (4, CLEARANCE), (5, STORM)]), Or([(2, CRYSTALIZED_DEW), (2, COPPER_BAR)])]), (10, TEA)),
         (And([Or([(3, BERRY), (3, MUSHROOM), (3, REED)]), Or([(3, POTTERY), (3, BARREL), (3, WATERSKIN)])]), (10, WINE)),

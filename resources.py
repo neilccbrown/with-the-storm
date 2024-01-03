@@ -8,7 +8,7 @@ CLAY = "clay"
 CLEARANCE = "clearance"
 COAL = "coal"
 COPPER_ORE = "copper_ore"
-COPPER_BAR = "copper_bar",
+COPPER_BAR = "copper_bar"
 CRYSTALIZED_DEW ="crystalized_dew"
 DRIZZLE = "drizzle"
 EGG = "egg"
@@ -54,9 +54,6 @@ FARM_FIELD = "farm_field"
 
 # Hack!
 ALL_RESOURCES = [item for item in dir() if not item.startswith("__")]
-
-# If they're not available as resources, you can't craft them:
-RAW_MATERIALS = [BERRY, CLAY, EGG, FARM_FIELD, GRAIN, HERB, INSECT, LEATHER, MEAT, MUSHROOM, PLANT_FIBER, REED, ROOT, SEA_MARROW, VEGETABLE, WOOD]
 
 RESOURCE_NODE_TO_NAME = {
     "Node Clay Deposit": CLAY,
