@@ -3,6 +3,7 @@
 from enum import IntEnum
 import json
 import os.path
+from pathlib import Path
 from queue import Queue
 import tkinter as tk
 from watchdog.events import FileSystemEventHandler
@@ -227,7 +228,7 @@ class MyFieldSystemEventHandler(FileSystemEventHandler):
         window.event_generate("<<WatchdogEvent>>", when="tail")
 
 observer = Observer()
-observer.schedule(MyFieldSystemEventHandler(), save_file_path)
+observer.schedule(MyFieldSystemEventHandler(), Path(save_file_path).parent.absolute())
 observer.start()
 
 def handle_watchdog_event(event):
