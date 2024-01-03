@@ -103,12 +103,12 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
     ],
     "Butcher": [
         (And([Or([(4, INSECT), (4, MEAT), (4, MUSHROOM), (3, BERRY)]), Or([(4, VEGETABLE), (4, ROOT), (4, BERRY), (4, EGG)])]), (10, SKEWERS)),
-        (And([Or([(5, INSECT), (5, MEAT)]), Or([(5, WOOD), (2, OIL), (1, COAL), (1, SEA_MARROW)])]), (10, BERRY)),
+        (And([Or([(5, INSECT), (5, MEAT)]), Or([(5, WOOD), (2, OIL), (1, COAL), (1, SEA_MARROW)])]), (10, JERKY)),
         (Or([(3, GRAIN), (3, MEAT), (3, VEGETABLE), (3, PLANT_FIBER)]), (5, OIL)),
     ],
     "Cellar": [
         (And([Or([(6, VEGETABLE), (6, MUSHROOM), (6, ROOT), (6, BERRY), (6, EGG)]), Or([(3, POTTERY), (3, BARREL), (3, WATERSKIN)])]), (10, PICKLED_GOOD)),
-        (And([Or([(6, INSECT), (6, MEAT)]), Or([(5, WOOD), (2, OIL), (1, COAL), (1, SEA_MARROW)])]), (10, BERRY)),
+        (And([Or([(6, INSECT), (6, MEAT)]), Or([(5, WOOD), (2, OIL), (1, COAL), (1, SEA_MARROW)])]), (10, JERKY)),
         (And([Or([(2, BERRY), (2, MUSHROOM), (2, REED)]), Or([(2, POTTERY), (2, BARREL), (2, WATERSKIN)])]), (10, WINE)),
     ],
     "Cookhouse": [
@@ -172,8 +172,8 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
     ],
     "Smokehouse": [
         (And([(4, CLAY), Or([(5, WOOD), (2, OIL), (1, COAL), (1, SEA_MARROW)])]), (5, POTTERY)),
-        (And([Or([(6, HERB), (6, ROOT), (6, INSECT), (8, RESIN)]), Or([(6, WOOD), (3, OIL), (2, COAL), (2, SEA_MARROW)])]), (10, INSECT)),
-        (And([Or([(4, INSECT), (4, MEAT)]), Or([(5, WOOD), (2, OIL), (1, COAL), (1, SEA_MARROW)])]), (10, BERRY)),
+        (And([Or([(6, HERB), (6, ROOT), (6, INSECT), (8, RESIN)]), Or([(6, WOOD), (3, OIL), (2, COAL), (2, SEA_MARROW)])]), (10, INCENSE)),
+        (And([Or([(4, INSECT), (4, MEAT)]), Or([(5, WOOD), (2, OIL), (1, COAL), (1, SEA_MARROW)])]), (10, JERKY)),
     ],
     "Advanced Rain Collector": [
         DRIZZLE,
@@ -277,7 +277,7 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
     ],
     "Kiln": [
         (Or([(4, CLAY), (4, STONE)]), (2, BRICK)),
-        (And([Or([(6, INSECT), (6, MEAT)]), Or([(5, WOOD), (2, OIL), (1, COAL), (1, SEA_MARROW)])]), (10, BERRY)),
+        (And([Or([(6, INSECT), (6, MEAT)]), Or([(5, WOOD), (2, OIL), (1, COAL), (1, SEA_MARROW)])]), (10, JERKY)),
         ((10, WOOD), (5, COAL)),
     ],
     "Leatherworker": [

@@ -15,6 +15,7 @@ EGG = "egg"
 FABRIC = "fabric"
 FLOUR = "flour"
 GRAIN = "grain"
+JERKY = "jerky"
 HERB = "herb"
 INCENSE = "incense"
 INSECT = "insect"
@@ -79,4 +80,6 @@ RESOURCE_NODE_TO_NAME = {
     "Node Meat": MEAT,
     "Node Stone": STONE,
     "Node Swamp Wheat": GRAIN,
+    "Node Moss Broccoli": VEGETABLE,
+    "Node Herbs": HERB,
 }
