@@ -16,6 +16,7 @@ FABRIC = "fabric"
 FLOUR = "flour"
 GRAIN = "grain"
 HERB = "herb"
+INCENSE = "incense"
 INSECT = "insect"
 LEATHER = "leather"
 MEAT = "meat"
@@ -51,6 +52,14 @@ WINE = "wine"
 WOOD = "wood"
 #Pseudo-resource:
 FARM_FIELD = "farm_field"
+BRAWLING = "brawling"
+CLEANLINESS = "cleanliness"
+EDUCATION = "education"
+LEISURE = "leisure"
+LUXURY = "luxury"
+RELIGION = "religion"
+
+
 
 # Hack!
 ALL_RESOURCES = [item for item in dir() if not item.startswith("__")]

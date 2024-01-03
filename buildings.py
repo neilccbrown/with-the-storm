@@ -61,6 +61,19 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
       "Water Extractor": [],
       "Sealed Biome Shrine": [],
 
+    "Bath House": [((1, TEA), (1, CLEANLINESS))],
+    "Clan Hall": [((1, TRAINING_GEAR), (1, BRAWLING)), ((1, INCENSE), (1, RELIGION))],
+    "Explorer's Lodge": [((1, TRAINING_GEAR), (1, BRAWLING)), ((1, SCROLL), (1, EDUCATION))],
+    "Forum": [((1, ALE), (1, LEISURE)), ((1, SCROLL), (1, EDUCATION))],
+    "Guild House": [((1, WINE), (1, LUXURY))],
+    "Holy Market": [((1, TEA), (1, CLEANLINESS)), ((1, WINE), (1, LUXURY))],
+    "Holy Temple": [((1, INCENSE), (1, RELIGION)), ((1, SCROLL), (1, EDUCATION))],
+    "Market": [((1, WINE), (1, LUXURY)), ((1, TEA), (1, CLEANLINESS))],
+    "Monastery": [((1, INCENSE), (1, RELIGION)), ((1, ALE), (1, LEISURE))],
+    "Tavern": [((1, TRAINING_GEAR), (1, BRAWLING)), ((1, ALE), (1, LEISURE))],
+    "Tea Doctor": [((1, TEA), (1, CLEANLINESS)), ((1, TRAINING_GEAR), (1, BRAWLING))],
+    "Temple": [((1, INCENSE), (1, RELIGION)), ((1, SCROLL), (1, EDUCATION))],
+
     # Resource buildings have dummy recipes to show what they can take from the map:
     "Forager's Camp": [GRAIN, ROOT, VEGETABLE],
     "Primitive Forager's Camp": [GRAIN, ROOT, VEGETABLE],
