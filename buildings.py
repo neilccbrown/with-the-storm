@@ -218,7 +218,7 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
         (And([Or([(5, GRAIN), (5, VEGETABLE), (5, MUSHROOM), (5, HERB)]), Or([(7, DRIZZLE), (9, CLEARANCE), (11, STORM)])]), (10, PORRIDGE)),
         (And([Or([(2, COPPER_BAR), (2, CRYSTALIZED_DEW)]), (2, PLANK)]), (10, BARREL)),
     ],
-    "Druid's Hut": [
+    "Druid": [
         (And([Or([(6, HERB), (6, ROOT), (6, INSECT), (8, RESIN)]), Or([(6, WOOD), (3, OIL), (2, COAL), (2, SEA_MARROW)])]), (10, INSECT)),
         ((3, FABRIC), (10, COAL)),
         (Or([(2, GRAIN), (2, MEAT), (2, VEGETABLE), (2, PLANT_FIBER)]), (5, OIL)),

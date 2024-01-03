@@ -84,6 +84,7 @@ BUILDING_NAME_MAP = {
     "Teahouse": "Tea House",
     "Small Farm": "SmallFarm",
     "Forester's Hut": "Grove",
+    "Druid's Hut": "Druid",
 }
 
 def fetch_building(url):
