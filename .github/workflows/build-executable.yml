@@ -21,7 +21,7 @@ jobs:
           cd ${{ github.workspace }}
           create-version-file exe-metadata.yml --outfile file_version_info.txt
           pyinstaller --onefile --windowed --name with-the-storm --version-file=file_version_info.txt main.py
-      - name: Archive BlueJ Windows installers
+      - name: Archive Windows EXE
         uses: actions/upload-artifact@v3
         with:
           name: with-the-storm-executable
