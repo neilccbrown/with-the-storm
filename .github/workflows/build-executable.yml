@@ -1,0 +1,29 @@
+name: Build EXE
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  Build-EXE:
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Python packages
+        run: |
+          cd ${{ github.workspace }}
+          pip install -r requirements.txt
+          pip install pyinstaller-versionfile
+          pip install pyinstaller
+      - name: Build EXE
+        run: |
+          cd ${{ github.workspace }}
+          create-version-file exe-metadata.yml --outfile file_version_info.txt
+          pyinstaller --onefile --windowed --name with-the-storm --version-file=file_version_info.txt main.py
+      - name: Archive BlueJ Windows installers
+        uses: actions/upload-artifact@v3
+        with:
+          name: with-the-storm-executable
+          path: |
+            dist/*.exe
