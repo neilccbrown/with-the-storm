@@ -80,7 +80,10 @@ def to_src(x):
 
 # Map buildings from wiki to game name
 BUILDING_NAME_MAP = {
-    "Alchemist's Hut": "Alchemist Hut"
+    "Alchemist's Hut": "Alchemist Hut",
+    "Teahouse": "Tea House",
+    "Small Farm": "SmallFarm",
+    "Forester's Hut": "Grove",
 }
 
 def fetch_building(url):

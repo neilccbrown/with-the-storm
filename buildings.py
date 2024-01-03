@@ -108,7 +108,7 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
         (And([Or([(4, VEGETABLE), (4, MUSHROOM), (4, ROOT), (4, BERRY), (4, EGG)]), Or([(3, POTTERY), (3, BARREL), (2, WATERSKIN)])]), (10, PICKLED_GOOD)),
         (And([Or([(4, INSECT), (4, MEAT)]), Or([(5, WOOD), (2, OIL), (1, COAL), (1, SEA_MARROW)])]), (10, BERRY)),
     ],
-    "Forester's Hut": [
+    "Grove": [
         ((1, FARM_FIELD), (6, RESIN)),
         ((1, FARM_FIELD), (3, CRYSTALIZED_DEW)),
     ],
@@ -153,7 +153,7 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
         (Or([(2, PLANT_FIBER), (2, REED), (2, GRAIN), (1, VEGETABLE)]), (4, LEATHER)),
         (Or([(3, GRAIN), (2, INSECT), (2, REED), (2, BERRY)]), (5, EGG)),
     ],
-    "Small Farm": [
+    "SmallFarm": [
         ((1, FARM_FIELD), (3, VEGETABLE)),
         ((1, FARM_FIELD), (6, GRAIN)),
     ],
@@ -342,7 +342,7 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
         ((5, WOOD), (2, PLANK)),
         (And([(5, LEATHER), Or([(3, OIL), (3, MEAT)])]), (10, WATERSKIN)),
     ],
-    "Teahouse": [
+    "Tea House": [
         (And([(6, LEATHER), Or([(4, OIL), (4, MEAT)])]), (10, WATERSKIN)),
         (And([Or([(5, GRAIN), (5, VEGETABLE), (5, MUSHROOM), (5, HERB)]), Or([(7, DRIZZLE), (9, CLEARANCE), (11, STORM)])]), (10, PORRIDGE)),
         (And([Or([(2, HERB), (2, PIGMENT), (2, RESIN), (2, MUSHROOM), (2, ROOT)]), Or([(2, DRIZZLE), (3, CLEARANCE), (4, STORM)]), Or([(1, CRYSTALIZED_DEW), (1, COPPER_BAR)])]), (10, TEA)),
