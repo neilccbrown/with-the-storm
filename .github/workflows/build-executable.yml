@@ -32,7 +32,6 @@ jobs:
           create-version-file exe-metadata.yml --outfile file_version_info.txt
           pyinstaller --onefile --windowed --name with-the-storm --version-file=file_version_info.txt main.py
       - name: Upload Release Asset
-        uses: actions/checkout@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run:
