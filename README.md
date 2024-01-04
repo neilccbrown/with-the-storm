@@ -9,6 +9,7 @@ If you notice any bugs, file an issue here.  The "Save.save" file from the "%use
 
 Changelog
 ===
+- 1.0.2 (2024-01-04): Fixed more buildings and added recognition of more resource nodes.
 - 1.0.1 (2024-01-03): Fixed some buildings and added recognition of more resource nodes.
 - 1.0.0 (2024-01-03): Initial release.
 
