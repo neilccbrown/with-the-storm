@@ -280,7 +280,7 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
         (And([Or([(6, INSECT), (6, MEAT)]), Or([(5, WOOD), (2, OIL), (1, COAL), (1, SEA_MARROW)])]), (10, JERKY)),
         ((10, WOOD), (5, COAL)),
     ],
-    "Leatherworker": [
+    "Leatherworks": [
         (Or([(3, PLANT_FIBER), (3, REED), (3, LEATHER)]), (2, FABRIC)),
         (Or([(4, INSECT), (4, BERRY), (4, COPPER_ORE), (3, COAL)]), (10, PIGMENT)),
         (And([(4, LEATHER), Or([(2, OIL), (2, MEAT)])]), (10, WATERSKIN)),
