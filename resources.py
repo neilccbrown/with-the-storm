@@ -7,6 +7,7 @@ BRICK = "brick"
 CLAY = "clay"
 CLEARANCE = "clearance"
 COAL = "coal"
+COAT = "coat"
 COPPER_ORE = "copper_ore"
 COPPER_BAR = "copper_bar"
 CRYSTALIZED_DEW ="crystalized_dew"
@@ -82,4 +83,6 @@ RESOURCE_NODE_TO_NAME = {
     "Node Swamp Wheat": GRAIN,
     "Node Moss Broccoli": VEGETABLE,
     "Node Herbs": HERB,
+    "Node Stormbird": EGG,
+    "Node Flax": PLANT_FIBER,
 }

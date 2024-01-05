@@ -21,6 +21,7 @@ class And:
 
 BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str]]] = {
     # Buildings that don't need an entry:
+      "Archeology office": [],
       "Blight Post": [],
       "Bank": [], # What is this?
       "Farmfield": [],
@@ -70,7 +71,7 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
     "Holy Temple": [((1, INCENSE), (1, RELIGION)), ((1, SCROLL), (1, EDUCATION))],
     "Market": [((1, WINE), (1, LUXURY)), ((1, TEA), (1, CLEANLINESS))],
     "Monastery": [((1, INCENSE), (1, RELIGION)), ((1, ALE), (1, LEISURE))],
-    "Tavern": [((1, TRAINING_GEAR), (1, BRAWLING)), ((1, ALE), (1, LEISURE))],
+    "Tavern": [((1, WINE), (1, LUXURY)), ((1, ALE), (1, LEISURE))],
     "Tea Doctor": [((1, TEA), (1, CLEANLINESS)), ((1, TRAINING_GEAR), (1, BRAWLING))],
     "Temple": [((1, INCENSE), (1, RELIGION)), ((1, SCROLL), (1, EDUCATION))],
 
@@ -98,7 +99,7 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
     ],
     "Brick Oven": [
         ((15, WOOD), (3, COAL)),
-        (And([Or([(6, HERB), (6, ROOT), (6, INSECT), (8, RESIN)]), Or([(6, WOOD), (3, OIL), (2, COAL), (2, SEA_MARROW)])]), (10, INSECT)),
+        (And([Or([(6, HERB), (6, ROOT), (6, INSECT), (8, RESIN)]), Or([(6, WOOD), (3, OIL), (2, COAL), (2, SEA_MARROW)])]), (10, INCENSE)),
         (And([(6, FLOUR), Or([(3, HERB), (3, MEAT), (3, INSECT), (3, EGG), (3, BERRY)])]), (10, PIPE)),
     ],
     "Butcher": [
@@ -187,11 +188,11 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
     ],
     "Apothecary": [
         (And([Or([(3, HERB), (3, PIGMENT), (3, RESIN), (3, MUSHROOM), (3, ROOT)]), Or([(3, DRIZZLE), (4, CLEARANCE), (5, STORM)]), Or([(2, CRYSTALIZED_DEW), (2, COPPER_BAR)])]), (10, TEA)),
-        (And([Or([(5, HERB), (5, ROOT), (5, INSECT), (7, RESIN)]), Or([(6, WOOD), (3, OIL), (2, COAL), (2, SEA_MARROW)])]), (10, INSECT)),
+        (And([Or([(5, HERB), (5, ROOT), (5, INSECT), (7, RESIN)]), Or([(6, WOOD), (3, OIL), (2, COAL), (2, SEA_MARROW)])]), (10, INCENSE)),
         (And([(8, FLOUR), Or([(3, HERB), (3, BERRY), (3, ROOT)])]), (10, BISCUITS)),
     ],
     "Artisan": [
-        ((2, FABRIC), (10, COAL)),
+        ((2, FABRIC), (10, COAT)),
         (And([Or([(2, COPPER_BAR), (2, CRYSTALIZED_DEW)]), (2, PLANK)]), (10, BARREL)),
         (Or([(4, WINE), (4, TRAINING_GEAR), (4, INSECT), (4, SCROLL), (4, ALE), (4, TEA)]), (2, PACK_OF_LUXURY_GOODS)),
     ],
@@ -213,11 +214,11 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
     "Clothier": [
         (And([(6, LEATHER), Or([(4, OIL), (4, MEAT)])]), (10, WATERSKIN)),
         (And([Or([(4, LEATHER), (4, PLANT_FIBER), (10, WOOD)]), Or([(3, PIGMENT), (3, WINE)])]), (8, SCROLL)),
-        ((1, FABRIC), (10, COAL)),
+        ((1, FABRIC), (10, COAT)),
     ],
     "Cooperage": [
         (And([Or([(4, HERB), (4, PIGMENT), (4, RESIN), (4, MUSHROOM), (4, ROOT)]), Or([(4, DRIZZLE), (5, CLEARANCE), (6, STORM)]), Or([(2, CRYSTALIZED_DEW), (2, COPPER_BAR)])]), (10, TEA)),
-        ((2, FABRIC), (10, COAL)),
+        ((2, FABRIC), (10, COAT)),
         (And([Or([(1, COPPER_BAR), (1, CRYSTALIZED_DEW)]), (2, PLANK)]), (10, BARREL)),
     ],
     "Crude Workstation": [
@@ -232,8 +233,8 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
         (And([Or([(2, COPPER_BAR), (2, CRYSTALIZED_DEW)]), (2, PLANK)]), (10, BARREL)),
     ],
     "Druid": [
-        (And([Or([(6, HERB), (6, ROOT), (6, INSECT), (8, RESIN)]), Or([(6, WOOD), (3, OIL), (2, COAL), (2, SEA_MARROW)])]), (10, INSECT)),
-        ((3, FABRIC), (10, COAL)),
+        (And([Or([(6, HERB), (6, ROOT), (6, INSECT), (8, RESIN)]), Or([(6, WOOD), (3, OIL), (2, COAL), (2, SEA_MARROW)])]), (10, INCENSE)),
+        ((3, FABRIC), (10, COAT)),
         (Or([(2, GRAIN), (2, MEAT), (2, VEGETABLE), (2, PLANT_FIBER)]), (5, OIL)),
     ],
     "Finesmith": [
@@ -247,13 +248,13 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
     ],
     "Flawless Cooperage": [
         (And([Or([(1, COPPER_BAR), (1, CRYSTALIZED_DEW)]), (2, PLANK)]), (10, BARREL)),
-        ((1, FABRIC), (10, COAL)),
+        ((1, FABRIC), (10, COAT)),
         (And([Or([(2, HERB), (2, PIGMENT), (2, RESIN), (2, MUSHROOM), (2, ROOT)]), Or([(2, DRIZZLE), (3, CLEARANCE), (4, STORM)]), Or([(1, CRYSTALIZED_DEW), (1, COPPER_BAR)])]), (10, TEA)),
     ],
     "Flawless Druid's Hut": [
         (Or([(2, GRAIN), (2, MEAT), (2, VEGETABLE), (2, PLANT_FIBER)]), (5, OIL)),
-        (And([Or([(4, HERB), (4, ROOT), (4, INSECT), (6, RESIN)]), Or([(6, WOOD), (3, OIL), (2, COAL), (2, SEA_MARROW)])]), (10, INSECT)),
-        ((1, FABRIC), (10, COAL)),
+        (And([Or([(4, HERB), (4, ROOT), (4, INSECT), (6, RESIN)]), Or([(6, WOOD), (3, OIL), (2, COAL), (2, SEA_MARROW)])]), (10, INCENSE)),
+        ((1, FABRIC), (10, COAT)),
     ],
     "Flawless Leatherworker": [
         (And([(4, LEATHER), Or([(2, OIL), (2, MEAT)])]), (10, WATERSKIN)),
