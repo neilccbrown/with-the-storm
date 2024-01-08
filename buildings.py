@@ -64,6 +64,7 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
     "Sealed Biome Shrine": [],
     "Cages": [],
     "Anvil": [],
+    "Rainpunk Barrels": [],
 
     "Bath House": [((1, TEA), (1, CLEANLINESS))],
     "Clan Hall": [((1, TRAINING_GEAR), (1, BRAWLING)), ((1, INCENSE), (1, RELIGION))],
@@ -119,6 +120,11 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
         (And([Or([(4, INSECT), (4, MEAT), (4, MUSHROOM), (3, BERRY)]), Or([(4, VEGETABLE), (4, ROOT), (4, BERRY), (4, EGG)])]), (10, SKEWERS)),
         (And([(8, FLOUR), Or([(3, HERB), (3, BERRY), (3, ROOT)])]), (10, BISCUITS)),
         (Or([(4, INSECT), (4, BERRY), (4, COPPER_ORE), (3, COAL)]), (10, PIGMENT)),
+    ],
+    "Field Kitchen": [
+        (And([Or([(8, INSECT), (8, MEAT)]), Or([(5, WOOD), (2, OIL), (1, COAL), (1, SEA_MARROW)])]), (10, JERKY)),
+        (And([(10, FLOUR), Or([(4, HERB), (4, BERRY), (4, ROOT)])]), (10, BISCUITS)),
+        (And([Or([(7, VEGETABLE), (7, MUSHROOM), (7, ROOT), (7, BERRY)]), Or([(3, POTTERY), (3, BARREL), (3, WATERSKIN)])]), (10, PICKLED_GOOD)),
     ],
     "Flawless Cellar": [
         (And([Or([(2, BERRY), (2, MUSHROOM), (2, REED)]), Or([(2, POTTERY), (2, BARREL), (2, WATERSKIN)])]), (10, WINE)),
