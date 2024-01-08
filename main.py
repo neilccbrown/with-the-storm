@@ -63,15 +63,20 @@ def load():
             content.insert("end", resource + ", ", "available")
         content.insert("end", "\n")
 
+        errors = []
+
         available_buildings = []
         for building in save["content"]["buildings"]:
             if building in BUILDINGS_TO_RECIPES:
                 available_buildings.append(building)
             else:
-                raise Exception("Unknown building: " + building)
+                errors.append("Unknown building: " + building)
 
         # For now, just assume all blueprints are available:
         available_blueprints = BUILDINGS_TO_RECIPES
+
+        for error in errors:
+            content.insert("end", error + "\n", "error")
 
         content.insert("end", "Available buildings:\n    ")
         for building in list(set(available_buildings)):
