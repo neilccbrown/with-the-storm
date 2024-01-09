@@ -65,6 +65,7 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
     "Cages": [],
     "Anvil": [],
     "Rainpunk Barrels": [],
+    "Wall": [],
 
     "Bath House": [((1, TEA), (1, CLEANLINESS))],
     "Clan Hall": [((1, TRAINING_GEAR), (1, BRAWLING)), ((1, INCENSE), (1, RELIGION))],
@@ -93,7 +94,7 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
 
     "Bakery": [
         (And([(8, FLOUR), Or([(3, HERB), (3, BERRY), (3, ROOT)])]), (10, BISCUITS)),
-        (And([(6, FLOUR), Or([(4, HERB), (4, MEAT), (4, INSECT), (4, EGG), (4, BERRY)])]), (10, PIPE)),
+        (And([(6, FLOUR), Or([(4, HERB), (4, MEAT), (4, INSECT), (4, EGG), (4, BERRY)])]), (10, PIE)),
         (And([(3, CLAY), Or([(5, WOOD), (2, OIL), (1, COAL), (1, SEA_MARROW)])]), (5, POTTERY)),
     ],
     "Beanery": [
@@ -104,7 +105,7 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
     "Brick Oven": [
         ((15, WOOD), (3, COAL)),
         (And([Or([(6, HERB), (6, ROOT), (6, INSECT), (8, RESIN)]), Or([(6, WOOD), (3, OIL), (2, COAL), (2, SEA_MARROW)])]), (10, INCENSE)),
-        (And([(6, FLOUR), Or([(3, HERB), (3, MEAT), (3, INSECT), (3, EGG), (3, BERRY)])]), (10, PIPE)),
+        (And([(6, FLOUR), Or([(3, HERB), (3, MEAT), (3, INSECT), (3, EGG), (3, BERRY)])]), (10, PIE)),
     ],
     "Butcher": [
         (And([Or([(4, INSECT), (4, MEAT), (4, MUSHROOM), (3, BERRY)]), Or([(4, VEGETABLE), (4, ROOT), (4, BERRY), (4, EGG)])]), (10, SKEWERS)),
@@ -283,7 +284,7 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
     "Furnace": [
         (And([(5, COPPER_ORE), Or([(5, WOOD), (2, OIL), (1, COAL), (1, SEA_MARROW)])]), (2, COPPER_BAR)),
         (Or([(3, CLAY), (3, STONE)]), (2, BRICK)),
-        (And([(6, FLOUR), Or([(4, HERB), (4, MEAT), (4, INSECT), (4, EGG), (4, BERRY)])]), (10, PIPE)),
+        (And([(6, FLOUR), Or([(4, HERB), (4, MEAT), (4, INSECT), (4, EGG), (4, BERRY)])]), (10, PIE)),
     ],
     "Kiln": [
         (Or([(4, CLAY), (4, STONE)]), (2, BRICK)),
