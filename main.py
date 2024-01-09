@@ -9,7 +9,6 @@ import tkinter as tk
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 
-from resources import *
 from buildings import *
 
 save_file_path = os.path.expandvars("%userprofile%\\appdata\\locallow\\Eremite Games\\Against the Storm\\Save.save")
@@ -20,14 +19,12 @@ window.title("With the Storm")
 class Availability(IntEnum):
     never_available = 1 # No way it can be available; raw resource not on map, or blueprints unavailable for crafting
     with_blueprint = 2 # Can only be crafted if future (but available) blueprints are unlocked
-    #if_crafted = 3 # Can be made if you build the right currently available buildings
-    available = 4 # Available right now as an output of one of your buildings
+    available = 3 # Available right now as an output of one of your buildings
 
 content = tk.Text()
 content.tag_configure(Availability.available.name, foreground="#000")
 content.tag_configure(Availability.never_available.name, foreground="#ddd")
 content.tag_configure(Availability.with_blueprint.name, foreground="#0cc")
-#content.tag_configure(Availability.if_crafted.name, foreground="#800")
 content.tag_configure("error", foreground="#f00")
 
 def load():
@@ -87,11 +84,12 @@ def load():
         current_choice = []
 
         # Find the current offer of blueprints:
-        for option in save["reputationRewards"]["currentPick"]["options"]:
-            if option["building"] in BUILDINGS_TO_RECIPES:
-                current_choice.append(option["building"])
-            else:
-                raise Exception("Unknown building type: " + option["building"])
+        if save["reputationRewards"] and save["reputationRewards"]["currentPick"] and save["reputationRewards"]["currentPick"]["options"]:
+            for option in save["reputationRewards"]["currentPick"]["options"]:
+                if option["building"] in BUILDINGS_TO_RECIPES:
+                    current_choice.append(option["building"])
+                else:
+                    raise Exception("Unknown building type: " + option["building"])
 
         cached_availability = {}
 
@@ -208,19 +206,18 @@ def load():
                 except Exception as e:
                     content.insert("end", f"{e}", "error")
 
-        content.insert("end", "Key:\n")
-        for a in Availability:
-            content.insert("end", "    \u2022 ")
-            match a:
-                case Availability.never_available:
-                    content.insert("end", a.name + ": No way it can be available on this map", a.name)
-                case Availability.with_blueprint:
-                    content.insert("end", a.name + ": Available only if you unlock the right blueprint in future", a.name)
-                #case Availability.if_crafted:
-                    #content.insert("end", a.name + ": Available if you build the right currently available building", a.name)
-                case Availability.available:
-                    content.insert("end", a.name + ": Available with the currently available set of buildings", a.name)
-            content.insert("end", "\n")
+        if current_choice != []:
+            content.insert("end", "Key:\n")
+            for a in Availability:
+                content.insert("end", "    \u2022 ")
+                match a:
+                    case Availability.never_available:
+                        content.insert("end", a.name + ": No way it can be available on this map", a.name)
+                    case Availability.with_blueprint:
+                        content.insert("end", a.name + ": Available only if you unlock the right blueprint in future", a.name)
+                    case Availability.available:
+                        content.insert("end", a.name + ": Available with the currently available set of buildings", a.name)
+                content.insert("end", "\n")
 
     except Exception as e:
         content.insert("end", f"{e}", "error")
@@ -246,11 +243,3 @@ window.bind("<<WatchdogEvent>>", handle_watchdog_event)
 
 
 window.mainloop()
-
-#if len(sys.argv) > 1:
-#    # Use given screenshot file for testing:
-#    process(cv2.imread(sys.argv[1]))
-#else:
-#    # Listen for shortcut and take screenshot:
-#    with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
-#        listener.join()
