@@ -11,6 +11,7 @@ If you notice any bugs, file an issue here.  The "Save.save" file from the "%use
 
 Changelog
 ===
+- 1.0.6 (2024-01-10): Added some advanced buildings and corrected an existing building and resource node.
 - 1.0.5 (2024-01-09): Tidied up the display when no blueprint choice is currently available.
 - 1.0.4 (2024-01-08): Added another decoration, and stopped an unknown building being a fatal error.
 - 1.0.3 (2024-01-05): Fixed more buildings and resources, and added recognition of yet more resource nodes.
