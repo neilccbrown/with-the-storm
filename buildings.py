@@ -21,9 +21,11 @@ class And:
 
 BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str]]] = {
     # Buildings that don't need an entry:
+    "Altar": [],
     "Archeology office": [],
     "Blight Post": [],
     "Bank": [], # What is this?
+    "Coral Decor": [],
     "Farmfield": [],
     "Shelter": [],
     "Hydrant": [],
@@ -117,6 +119,10 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
         (And([Or([(6, INSECT), (6, MEAT)]), Or([(5, WOOD), (2, OIL), (1, COAL), (1, SEA_MARROW)])]), (10, JERKY)),
         (And([Or([(2, BERRY), (2, MUSHROOM), (2, REED)]), Or([(2, POTTERY), (2, BARREL), (2, WATERSKIN)])]), (10, WINE)),
     ],
+    "Clay Pit Workshop": [
+        (And([(4, CLEARANCE), (4, FARM_FIELD)]), (4, CLAY)),
+        (And([(4, CLEARANCE), (4, FARM_FIELD)]), (4, REED)),
+    ],
     "Cookhouse": [
         (And([Or([(4, INSECT), (4, MEAT), (4, MUSHROOM), (3, BERRY)]), Or([(4, VEGETABLE), (4, ROOT), (4, BERRY), (4, EGG)])]), (10, SKEWERS)),
         (And([(8, FLOUR), Or([(3, HERB), (3, BERRY), (3, ROOT)])]), (10, BISCUITS)),
@@ -141,9 +147,9 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
         (And([Or([(5, VEGETABLE), (5, MUSHROOM), (5, ROOT), (5, BERRY), (5, EGG)]), Or([(3, POTTERY), (3, BARREL), (2, WATERSKIN)])]), (10, PICKLED_GOOD)),
         (Or([(3, PLANT_FIBER), (3, REED), (3, LEATHER)]), (2, FABRIC)),
     ],
-    "Greenhouse": [
-        ((4, DRIZZLE), (4, MUSHROOM)),
-        ((4, DRIZZLE), (4, HERB)),
+    "Greenhouse Workshop": [
+        (And([(4, DRIZZLE), (4, FARM_FIELD)]), (4, MUSHROOM)),
+        (And([(4, DRIZZLE), (4, FARM_FIELD)]), (4, HERB)),
     ],
     "Grill": [
         (And([(6, COPPER_ORE), Or([(5, WOOD), (2, OIL), (1, COAL), (1, SEA_MARROW)])]), (2, COPPER_BAR)),

@@ -77,7 +77,7 @@ RESOURCE_NODE_TO_NAME = {
     "Node Sea Marrow Deposit": SEA_MARROW,
     "Node Snail Broodmother": MEAT,
     "Node Small Reptile": EGG,
-    "Node Big Reptile": EGG,
+    "Node Big Reptile": MEAT,
     "Node Grain": GRAIN,
     "Node Meat": MEAT,
     "Node Stone": STONE,
