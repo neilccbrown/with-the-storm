@@ -1,11 +1,10 @@
-# To update requirements.txt, run:
-#   rm requirements.txt ; pigar generate --enable-feature requirement-annotations
 from enum import IntEnum
 import json
 import os.path
 from pathlib import Path
 from queue import Queue
 import tkinter as tk
+import tkinter.filedialog as tkfd
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 
@@ -21,9 +20,12 @@ class Availability(IntEnum):
     with_blueprint = 2 # Can only be crafted if future (but available) blueprints are unlocked
     available = 3 # Available right now as an output of one of your buildings
 
+observer = None
+queue = Queue()
+
 content = tk.Text()
 content.tag_configure(Availability.available.name, foreground="#000")
-content.tag_configure(Availability.never_available.name, foreground="#ddd")
+content.tag_configure(Availability.never_available.name, foreground="#ccc")
 content.tag_configure(Availability.with_blueprint.name, foreground="#0cc")
 content.tag_configure("error", foreground="#f00")
 
@@ -221,19 +223,50 @@ def load():
 
     except Exception as e:
         content.insert("end", f"{e}", "error")
+
 load()
+
+def start_observer():
+    global observer
+    global queue
+    global save_file_path
+    class MyFieldSystemEventHandler(FileSystemEventHandler):
+        def on_modified(self, event):
+            queue.put(event)
+            window.event_generate("<<WatchdogEvent>>", when="tail")
+
+    observer = Observer()
+    try:
+        observer.schedule(MyFieldSystemEventHandler(), Path(save_file_path).parent.absolute())
+        observer.start()
+    except Exception as e:
+        content.insert("end", f"{e}", "error")
+
+
+save_path_display = tk.Label()
+def update_save_path_display():
+    global save_path_display
+    global save_file_path
+    save_path_display.config(text = "Using " + save_file_path)
+update_save_path_display()
+def pick_save():
+    global observer
+    global save_file_path
+    new_file = tkfd.askopenfilename(filetypes=[("Save files", "*.save")])
+    if new_file:
+        save_file_path = new_file
+        update_save_path_display()
+        load()
+        if observer:
+            observer.stop()
+        start_observer()
+
+choose_save = tk.Button(text="Choose different Save.save file", command=pick_save)
+save_path_display.pack()
+choose_save.pack()
 content.pack(fill=tk.BOTH, expand=True)
 
-queue = Queue()
-
-class MyFieldSystemEventHandler(FileSystemEventHandler):
-    def on_modified(self, event):
-        queue.put(event)
-        window.event_generate("<<WatchdogEvent>>", when="tail")
-
-observer = Observer()
-observer.schedule(MyFieldSystemEventHandler(), Path(save_file_path).parent.absolute())
-observer.start()
+start_observer()
 
 def handle_watchdog_event(event):
     watchdog_event = queue.get()
