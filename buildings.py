@@ -22,6 +22,7 @@ class And:
 BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str]]] = {
     # Buildings that don't need an entry:
     "Altar": [],
+    "Ancient Gravestone": [],
     "Archeology office": [],
     "Blight Post": [],
     "Bank": [], # What is this?
@@ -47,6 +48,7 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
     "Comfort 2x2 - Park": [],
     "Pipe": [],
     "Pipe Cross": [],
+    "Pipe Elbow": [],
     "Pipe Valve": [],
     "Pipe End": [],
     "Tower": [],
