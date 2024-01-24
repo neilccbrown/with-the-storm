@@ -70,6 +70,11 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
     "Anvil": [],
     "Rainpunk Barrels": [],
     "Wall": [],
+    "Wall Corner": [],
+    "Mushroom Decor": [],
+    "Fountain": [],
+    "Scarlet Decor": [],
+    "Golden Leaf": [],
 
     "Bath House": [((1, TEA), (1, CLEANLINESS))],
     "Clan Hall": [((1, TRAINING_GEAR), (1, BRAWLING)), ((1, INCENSE), (1, RELIGION))],
@@ -194,7 +199,7 @@ BUILDINGS_TO_RECIPES: dict[str, list[str | tuple[And | Or | tuple[int, str], str
         (And([Or([(6, HERB), (6, ROOT), (6, INSECT), (8, RESIN)]), Or([(6, WOOD), (3, OIL), (2, COAL), (2, SEA_MARROW)])]), (10, INCENSE)),
         (And([Or([(4, INSECT), (4, MEAT)]), Or([(5, WOOD), (2, OIL), (1, COAL), (1, SEA_MARROW)])]), (10, JERKY)),
     ],
-    "Advanced Rain Collector": [
+    "Advanced Rain Catcher": [
         DRIZZLE,
         CLEARANCE,
         STORM,
