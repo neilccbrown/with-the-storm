@@ -11,6 +11,7 @@ If you notice any bugs, file an issue here.  The "Save.save" file from the "%use
 
 Changelog
 ===
+- 1.0.8 (2024-01-24): Added recognition of some more scenery buildings, and fixed name of advanced rain collector.
 - 1.0.7 (2024-01-13): Allowed choosing save file location manually, for users with save files that are not in the default location.
 - 1.0.6 (2024-01-10): Added some advanced buildings and corrected an existing building and resource node.
 - 1.0.5 (2024-01-09): Tidied up the display when no blueprint choice is currently available.
